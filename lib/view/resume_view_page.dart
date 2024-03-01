@@ -1,10 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class ViewPage extends StatelessWidget {
+class ViewPage extends ConsumerWidget {
   const ViewPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
         elevation: 1,
@@ -15,7 +18,46 @@ class ViewPage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(5),
                 border: Border.all(width: 0.8, color: Colors.black)),
             child: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  showModalBottomSheet<void>(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return SizedBox(
+                        height: 200,
+                        child: Center(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 5),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                Expanded(
+                                  child: const TextField(
+                                    decoration: InputDecoration(
+                                        labelText: 'Add name here',
+                                        border: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                                color: Colors.black,
+                                                width: 1))),
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                        side: BorderSide(
+                                            width: 0.8, color: Colors.black)),
+                                    onPressed: () {},
+                                    child: Text('Save'))
+                              ],
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  );
+                },
                 icon: const Icon(
                   Icons.done,
                   color: Colors.green,

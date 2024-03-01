@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:resume_builder/view/add_resume_page.dart';
 
 class ResumeHomePage extends StatelessWidget {
   const ResumeHomePage({super.key});
@@ -34,7 +35,13 @@ class ResumeHomePage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         elevation: 0,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(
+            builder: (context) {
+              return const AddResumePage();
+            },
+          ));
+        },
         child: const Icon(Icons.add),
       ),
     );
