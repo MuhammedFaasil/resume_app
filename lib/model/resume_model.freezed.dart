@@ -150,26 +150,26 @@ abstract class _ResumeSection implements ResumeSection {
 }
 
 /// @nodoc
-mixin _$Resume {
+mixin _$Resumes {
   String get name => throw _privateConstructorUsedError;
   List<ResumeSection> get resumeModel => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ResumeCopyWith<Resume> get copyWith => throw _privateConstructorUsedError;
+  $ResumesCopyWith<Resumes> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ResumeCopyWith<$Res> {
-  factory $ResumeCopyWith(Resume value, $Res Function(Resume) then) =
-      _$ResumeCopyWithImpl<$Res, Resume>;
+abstract class $ResumesCopyWith<$Res> {
+  factory $ResumesCopyWith(Resumes value, $Res Function(Resumes) then) =
+      _$ResumesCopyWithImpl<$Res, Resumes>;
   @useResult
   $Res call({String name, List<ResumeSection> resumeModel});
 }
 
 /// @nodoc
-class _$ResumeCopyWithImpl<$Res, $Val extends Resume>
-    implements $ResumeCopyWith<$Res> {
-  _$ResumeCopyWithImpl(this._value, this._then);
+class _$ResumesCopyWithImpl<$Res, $Val extends Resumes>
+    implements $ResumesCopyWith<$Res> {
+  _$ResumesCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -196,21 +196,21 @@ class _$ResumeCopyWithImpl<$Res, $Val extends Resume>
 }
 
 /// @nodoc
-abstract class _$$ResumeImplCopyWith<$Res> implements $ResumeCopyWith<$Res> {
-  factory _$$ResumeImplCopyWith(
-          _$ResumeImpl value, $Res Function(_$ResumeImpl) then) =
-      __$$ResumeImplCopyWithImpl<$Res>;
+abstract class _$$ResumesImplCopyWith<$Res> implements $ResumesCopyWith<$Res> {
+  factory _$$ResumesImplCopyWith(
+          _$ResumesImpl value, $Res Function(_$ResumesImpl) then) =
+      __$$ResumesImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String name, List<ResumeSection> resumeModel});
 }
 
 /// @nodoc
-class __$$ResumeImplCopyWithImpl<$Res>
-    extends _$ResumeCopyWithImpl<$Res, _$ResumeImpl>
-    implements _$$ResumeImplCopyWith<$Res> {
-  __$$ResumeImplCopyWithImpl(
-      _$ResumeImpl _value, $Res Function(_$ResumeImpl) _then)
+class __$$ResumesImplCopyWithImpl<$Res>
+    extends _$ResumesCopyWithImpl<$Res, _$ResumesImpl>
+    implements _$$ResumesImplCopyWith<$Res> {
+  __$$ResumesImplCopyWithImpl(
+      _$ResumesImpl _value, $Res Function(_$ResumesImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -219,7 +219,7 @@ class __$$ResumeImplCopyWithImpl<$Res>
     Object? name = null,
     Object? resumeModel = null,
   }) {
-    return _then(_$ResumeImpl(
+    return _then(_$ResumesImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -234,8 +234,8 @@ class __$$ResumeImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ResumeImpl implements _Resume {
-  _$ResumeImpl(
+class _$ResumesImpl implements _Resumes {
+  _$ResumesImpl(
       {required this.name, required final List<ResumeSection> resumeModel})
       : _resumeModel = resumeModel;
 
@@ -251,14 +251,14 @@ class _$ResumeImpl implements _Resume {
 
   @override
   String toString() {
-    return 'Resume(name: $name, resumeModel: $resumeModel)';
+    return 'Resumes(name: $name, resumeModel: $resumeModel)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ResumeImpl &&
+            other is _$ResumesImpl &&
             (identical(other.name, name) || other.name == name) &&
             const DeepCollectionEquality()
                 .equals(other._resumeModel, _resumeModel));
@@ -271,14 +271,14 @@ class _$ResumeImpl implements _Resume {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ResumeImplCopyWith<_$ResumeImpl> get copyWith =>
-      __$$ResumeImplCopyWithImpl<_$ResumeImpl>(this, _$identity);
+  _$$ResumesImplCopyWith<_$ResumesImpl> get copyWith =>
+      __$$ResumesImplCopyWithImpl<_$ResumesImpl>(this, _$identity);
 }
 
-abstract class _Resume implements Resume {
-  factory _Resume(
+abstract class _Resumes implements Resumes {
+  factory _Resumes(
       {required final String name,
-      required final List<ResumeSection> resumeModel}) = _$ResumeImpl;
+      required final List<ResumeSection> resumeModel}) = _$ResumesImpl;
 
   @override
   String get name;
@@ -286,6 +286,6 @@ abstract class _Resume implements Resume {
   List<ResumeSection> get resumeModel;
   @override
   @JsonKey(ignore: true)
-  _$$ResumeImplCopyWith<_$ResumeImpl> get copyWith =>
+  _$$ResumesImplCopyWith<_$ResumesImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -11,9 +11,9 @@ class ResumeSection with _$ResumeSection {
 }
 
 @freezed
-class Resume with _$Resume {
-  factory Resume({
+class Resumes with _$Resumes {
+  factory Resumes({
     required String name,
     required List<ResumeSection> resumeModel,
-  }) = _Resume;
+  }) = _Resumes;
 }
