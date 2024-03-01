@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:resume_builder/controler/resume_provider.dart';
 import 'package:resume_builder/core/extensions/navigation_extension.dart';
 import 'package:resume_builder/view/pages/resume_page.dart';
+import 'package:resume_builder/view/pages/view_resume_page.dart';
 
 import '../widgets/search_field_widget.dart';
 
@@ -43,7 +44,9 @@ class ResumeHomePage extends ConsumerWidget {
                   return Card(
                     clipBehavior: Clip.antiAlias,
                     child: ListTile(
-                      onTap: () {},
+                      onTap: () {
+                        context.push(ViewResumePage(resume: resumes[index]));
+                      },
                       leading: CircleAvatar(
                         backgroundImage: resumes[index].profilePicture == null
                             ? null
