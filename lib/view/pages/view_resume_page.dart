@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:resume_builder/model/resume_model.dart';
@@ -24,12 +26,12 @@ class ViewResumePage extends StatelessWidget {
               const SizedBox(width: double.infinity, height: 16),
               CircleAvatar(
                 radius: 72,
-                backgroundImage: resume.profilePicture == null
+                backgroundImage: resume.profilePicturePath == null
                     ? null
                     : kIsWeb
-                        ? NetworkImage(resume.profilePicture!.path)
+                        ? NetworkImage(resume.profilePicturePath!)
                             as ImageProvider
-                        : FileImage(resume.profilePicture!),
+                        : FileImage(File(resume.profilePicturePath!)),
               ),
               const SizedBox(height: 12),
               Text(

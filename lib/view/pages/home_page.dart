@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -6,12 +8,10 @@ import 'package:resume_builder/core/extensions/navigation_extension.dart';
 import 'package:resume_builder/view/pages/resume_page.dart';
 import 'package:resume_builder/view/pages/view_resume_page.dart';
 
-import '../widgets/search_field_widget.dart';
-
 class ResumeHomePage extends ConsumerWidget {
   ResumeHomePage({super.key});
 
-  final search = TextEditingController();
+  // final search = TextEditingController();
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -22,13 +22,13 @@ class ResumeHomePage extends ConsumerWidget {
         appBar: AppBar(
           elevation: 1,
           title: const Text('Quick Resume'),
-          bottom: PreferredSize(
-            preferredSize: const Size.fromHeight(56),
-            child: SearchField(
-              search: search,
-              onChanged: (value) {},
-            ),
-          ),
+          // bottom: PreferredSize(
+          //   preferredSize: const Size.fromHeight(56),
+          //   child: SearchField(
+          //     search: search,
+          //     onChanged: (value) {},
+          //   ),
+          // ),
         ),
         body: resumes.isEmpty
             ? const Center(
@@ -48,14 +48,16 @@ class ResumeHomePage extends ConsumerWidget {
                         context.push(ViewResumePage(resume: resumes[index]));
                       },
                       leading: CircleAvatar(
-                        backgroundImage: resumes[index].profilePicture == null
+                        backgroundImage: resumes[index].profilePicturePath ==
+                                null
                             ? null
                             : kIsWeb
                                 ? NetworkImage(
-                                        resumes[index].profilePicture!.path)
+                                        resumes[index].profilePicturePath!)
                                     as ImageProvider
-                                : FileImage(resumes[index].profilePicture!),
-                        child: resumes[index].profilePicture == null
+                                : FileImage(
+                                    File(resumes[index].profilePicturePath!)),
+                        child: resumes[index].profilePicturePath == null
                             ? const Icon(Icons.person)
                             : null,
                       ),

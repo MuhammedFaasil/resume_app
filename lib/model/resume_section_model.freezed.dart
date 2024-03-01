@@ -14,11 +14,16 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
+ResumeSectionModel _$ResumeSectionModelFromJson(Map<String, dynamic> json) {
+  return _ResumeSectionModel.fromJson(json);
+}
+
 /// @nodoc
 mixin _$ResumeSectionModel {
   String get title => throw _privateConstructorUsedError;
   String get content => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $ResumeSectionModelCopyWith<ResumeSectionModel> get copyWith =>
       throw _privateConstructorUsedError;
@@ -101,9 +106,12 @@ class __$$ResumeSectionModelImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$ResumeSectionModelImpl implements _ResumeSectionModel {
   _$ResumeSectionModelImpl({required this.title, required this.content});
+
+  factory _$ResumeSectionModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ResumeSectionModelImplFromJson(json);
 
   @override
   final String title;
@@ -124,6 +132,7 @@ class _$ResumeSectionModelImpl implements _ResumeSectionModel {
             (identical(other.content, content) || other.content == content));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, title, content);
 
@@ -133,12 +142,22 @@ class _$ResumeSectionModelImpl implements _ResumeSectionModel {
   _$$ResumeSectionModelImplCopyWith<_$ResumeSectionModelImpl> get copyWith =>
       __$$ResumeSectionModelImplCopyWithImpl<_$ResumeSectionModelImpl>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ResumeSectionModelImplToJson(
+      this,
+    );
+  }
 }
 
 abstract class _ResumeSectionModel implements ResumeSectionModel {
   factory _ResumeSectionModel(
       {required final String title,
       required final String content}) = _$ResumeSectionModelImpl;
+
+  factory _ResumeSectionModel.fromJson(Map<String, dynamic> json) =
+      _$ResumeSectionModelImpl.fromJson;
 
   @override
   String get title;

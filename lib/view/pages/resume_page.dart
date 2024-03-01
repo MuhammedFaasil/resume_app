@@ -31,7 +31,8 @@ class ResumePage extends HookConsumerWidget {
     }
     final sectionList =
         useState<List<ResumeSectionModel>>(isEdit ? resume!.sections : []);
-    final image = useState<File?>(isEdit ? resume!.profilePicture : null);
+    final image =
+        useState<File?>(isEdit ? File(resume!.profilePicturePath!) : null);
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
@@ -48,16 +49,20 @@ class ResumePage extends HookConsumerWidget {
                     ref.read(resumeProvider.notifier).updateResume(
                         resumeIndex!,
                         ResumeModel(
+                            id: resume!.id,
                             name: name.text,
                             designation: designation.text,
-                            profilePicture: image.value,
+                            profilePicturePath: image.value?.path,
                             sections: sectionList.value));
                   } else {
                     ref.read(resumeProvider.notifier).addResume(
                           ResumeModel(
+                            id: DateTime.now()
+                                .microsecondsSinceEpoch
+                                .toString(),
                             name: name.text,
                             designation: designation.text,
-                            profilePicture: image.value,
+                            profilePicturePath: image.value?.path,
                             sections: sectionList.value,
                           ),
                         );

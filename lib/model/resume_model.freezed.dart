@@ -14,18 +14,25 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
+ResumeModel _$ResumeModelFromJson(Map<String, dynamic> json) {
+  return _ResumeModel.fromJson(json);
+}
+
 /// @nodoc
 mixin _$ResumeModel {
+  String get id => throw _privateConstructorUsedError;
+  set id(String value) => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   set name(String value) => throw _privateConstructorUsedError;
   String get designation => throw _privateConstructorUsedError;
   set designation(String value) => throw _privateConstructorUsedError;
-  File? get profilePicture => throw _privateConstructorUsedError;
-  set profilePicture(File? value) => throw _privateConstructorUsedError;
+  String? get profilePicturePath => throw _privateConstructorUsedError;
+  set profilePicturePath(String? value) => throw _privateConstructorUsedError;
   List<ResumeSectionModel> get sections => throw _privateConstructorUsedError;
   set sections(List<ResumeSectionModel> value) =>
       throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $ResumeModelCopyWith<ResumeModel> get copyWith =>
       throw _privateConstructorUsedError;
@@ -38,9 +45,10 @@ abstract class $ResumeModelCopyWith<$Res> {
       _$ResumeModelCopyWithImpl<$Res, ResumeModel>;
   @useResult
   $Res call(
-      {String name,
+      {String id,
+      String name,
       String designation,
-      File? profilePicture,
+      String? profilePicturePath,
       List<ResumeSectionModel> sections});
 }
 
@@ -57,12 +65,17 @@ class _$ResumeModelCopyWithImpl<$Res, $Val extends ResumeModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? name = null,
     Object? designation = null,
-    Object? profilePicture = freezed,
+    Object? profilePicturePath = freezed,
     Object? sections = null,
   }) {
     return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -71,10 +84,10 @@ class _$ResumeModelCopyWithImpl<$Res, $Val extends ResumeModel>
           ? _value.designation
           : designation // ignore: cast_nullable_to_non_nullable
               as String,
-      profilePicture: freezed == profilePicture
-          ? _value.profilePicture
-          : profilePicture // ignore: cast_nullable_to_non_nullable
-              as File?,
+      profilePicturePath: freezed == profilePicturePath
+          ? _value.profilePicturePath
+          : profilePicturePath // ignore: cast_nullable_to_non_nullable
+              as String?,
       sections: null == sections
           ? _value.sections
           : sections // ignore: cast_nullable_to_non_nullable
@@ -92,9 +105,10 @@ abstract class _$$ResumeModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String name,
+      {String id,
+      String name,
       String designation,
-      File? profilePicture,
+      String? profilePicturePath,
       List<ResumeSectionModel> sections});
 }
 
@@ -109,12 +123,17 @@ class __$$ResumeModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? name = null,
     Object? designation = null,
-    Object? profilePicture = freezed,
+    Object? profilePicturePath = freezed,
     Object? sections = null,
   }) {
     return _then(_$ResumeModelImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -123,10 +142,10 @@ class __$$ResumeModelImplCopyWithImpl<$Res>
           ? _value.designation
           : designation // ignore: cast_nullable_to_non_nullable
               as String,
-      profilePicture: freezed == profilePicture
-          ? _value.profilePicture
-          : profilePicture // ignore: cast_nullable_to_non_nullable
-              as File?,
+      profilePicturePath: freezed == profilePicturePath
+          ? _value.profilePicturePath
+          : profilePicturePath // ignore: cast_nullable_to_non_nullable
+              as String?,
       sections: null == sections
           ? _value.sections
           : sections // ignore: cast_nullable_to_non_nullable
@@ -136,26 +155,32 @@ class __$$ResumeModelImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$ResumeModelImpl implements _ResumeModel {
   _$ResumeModelImpl(
-      {required this.name,
+      {required this.id,
+      required this.name,
       required this.designation,
-      required this.profilePicture,
+      required this.profilePicturePath,
       required this.sections});
 
+  factory _$ResumeModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ResumeModelImplFromJson(json);
+
+  @override
+  String id;
   @override
   String name;
   @override
   String designation;
   @override
-  File? profilePicture;
+  String? profilePicturePath;
   @override
   List<ResumeSectionModel> sections;
 
   @override
   String toString() {
-    return 'ResumeModel(name: $name, designation: $designation, profilePicture: $profilePicture, sections: $sections)';
+    return 'ResumeModel(id: $id, name: $name, designation: $designation, profilePicturePath: $profilePicturePath, sections: $sections)';
   }
 
   @JsonKey(ignore: true)
@@ -163,15 +188,29 @@ class _$ResumeModelImpl implements _ResumeModel {
   @pragma('vm:prefer-inline')
   _$$ResumeModelImplCopyWith<_$ResumeModelImpl> get copyWith =>
       __$$ResumeModelImplCopyWithImpl<_$ResumeModelImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ResumeModelImplToJson(
+      this,
+    );
+  }
 }
 
 abstract class _ResumeModel implements ResumeModel {
   factory _ResumeModel(
-      {required String name,
+      {required String id,
+      required String name,
       required String designation,
-      required File? profilePicture,
+      required String? profilePicturePath,
       required List<ResumeSectionModel> sections}) = _$ResumeModelImpl;
 
+  factory _ResumeModel.fromJson(Map<String, dynamic> json) =
+      _$ResumeModelImpl.fromJson;
+
+  @override
+  String get id;
+  set id(String value);
   @override
   String get name;
   set name(String value);
@@ -179,8 +218,8 @@ abstract class _ResumeModel implements ResumeModel {
   String get designation;
   set designation(String value);
   @override
-  File? get profilePicture;
-  set profilePicture(File? value);
+  String? get profilePicturePath;
+  set profilePicturePath(String? value);
   @override
   List<ResumeSectionModel> get sections;
   set sections(List<ResumeSectionModel> value);
