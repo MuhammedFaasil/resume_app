@@ -1,16 +1,50 @@
-# resume_builder
+# QUICK RESUME
+## Machine test
 
-A new Flutter project.
+This is a Flutter application created to implement the machine test assigned to me by  Knovator technologies.MVC architecture is used for structuring the folders. Read the project setup to run the application in your device.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Objectives
 
-A few resources to get you started if this is your first Flutter project:
+A simple resume builder app.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- The user should be able to add, update, delete and change the order of the
+resume items.
+- The user should be able to see the final resume.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Packages Used
+
+- Riverpod - State Management
+- Shared Preference - Local storage package
+- Freezed - data class generator
+- Flutter Hooks - to get the hooks in flutter
+
+## Project Setup to run the applicaction
+
+- Clone the Github respository
+
+```bash
+git clone https://github.com/MuhammedFaasil/resume_app.git
+```
+
+- Get all dependencies
+
+```bash
+flutter pub get
+```
+
+- Generate freezed classes and providers
+
+```bash
+dart run build_runner build
+```
+- Run the application
+
+```bash
+flutter run
+```
+
+## Contact Me
+
+- Phone: 9746391858 (WhatsApp available)
+- Email: muhammedfaasilpty@gmail.com
