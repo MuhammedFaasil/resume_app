@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:resume_builder/core/extensions/navigation_extension.dart';
 import 'package:resume_builder/view/pages/add_resume_page.dart';
 
 import '../widgets/search_field_widget.dart';
@@ -49,16 +50,13 @@ class ResumeHomePage extends StatelessWidget {
             );
           },
         ),
-        floatingActionButton: FloatingActionButton(
+        floatingActionButton: FloatingActionButton.extended(
           elevation: 0,
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(
-              builder: (context) {
-                return const AddResumePage();
-              },
-            ));
+            context.push(AddResumePage());
           },
-          child: const Icon(Icons.add),
+          label: const Text("New Resume"),
+          icon: const Icon(Icons.add),
         ),
       ),
     );

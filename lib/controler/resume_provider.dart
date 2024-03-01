@@ -12,6 +12,9 @@ class Resume extends _$Resume {
       resumeModel: [],
     );
   }
+ 
+ Future<void>addDetailes()async{
 
-  
+ }
+
 }
