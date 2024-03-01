@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:resume_builder/core/extensions/navigation_extension.dart';
 import 'package:resume_builder/core/extensions/snack_bar_extesnions.dart';
 
 import '../../view/widgets/resume_field_widget.dart';
 
-class AddNewSectionWidget extends StatelessWidget {
+class AddNewSectionWidget extends ConsumerWidget {
+  final void Function(String title, String content) onAdd;
   AddNewSectionWidget({
     super.key,
+    required this.onAdd,
   });
   final title = TextEditingController();
   final content = TextEditingController();
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return ScaffoldMessenger(
       child: Builder(builder: (context) {
         return Scaffold(
@@ -48,7 +51,7 @@ class AddNewSectionWidget extends StatelessWidget {
                     context.errorSnackBar(
                         'You must fill title and content to create a new section');
                   } else {
-                    context.pop();
+                    onAdd(title.text,content.text);
                   }
                 },
                 child: const Text("Submit"),

@@ -6,15 +6,25 @@ part 'resume_provider.g.dart';
 @riverpod
 class Resume extends _$Resume {
   @override
-  Resumes build() {
-    return Resumes(
-      name: '',
-      resumeModel: [],
-    );
+  List<ResumeModel> build() {
+    return <ResumeModel>[];
   }
- 
- Future<void>addDetailes()async{
 
- }
+  void addResume(ResumeModel resumeData) {
+    state = [...state, resumeData];
+  }
 
+  void updateResume(int index, ResumeModel resumeData) {
+    state = [
+      for (final resume in state)
+        if (resume != state[index]) resume else resumeData
+    ];
+  }
+
+  void deleteResume(int index) {
+    state = [
+      for (final resume in state)
+        if (resume != state[index]) resume
+    ];
+  }
 }

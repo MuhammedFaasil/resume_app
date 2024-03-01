@@ -15,161 +15,39 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$ResumeSection {
-  String get title => throw _privateConstructorUsedError;
-  String get content => throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $ResumeSectionCopyWith<ResumeSection> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ResumeSectionCopyWith<$Res> {
-  factory $ResumeSectionCopyWith(
-          ResumeSection value, $Res Function(ResumeSection) then) =
-      _$ResumeSectionCopyWithImpl<$Res, ResumeSection>;
-  @useResult
-  $Res call({String title, String content});
-}
-
-/// @nodoc
-class _$ResumeSectionCopyWithImpl<$Res, $Val extends ResumeSection>
-    implements $ResumeSectionCopyWith<$Res> {
-  _$ResumeSectionCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? title = null,
-    Object? content = null,
-  }) {
-    return _then(_value.copyWith(
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      content: null == content
-          ? _value.content
-          : content // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$ResumeSectionImplCopyWith<$Res>
-    implements $ResumeSectionCopyWith<$Res> {
-  factory _$$ResumeSectionImplCopyWith(
-          _$ResumeSectionImpl value, $Res Function(_$ResumeSectionImpl) then) =
-      __$$ResumeSectionImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String title, String content});
-}
-
-/// @nodoc
-class __$$ResumeSectionImplCopyWithImpl<$Res>
-    extends _$ResumeSectionCopyWithImpl<$Res, _$ResumeSectionImpl>
-    implements _$$ResumeSectionImplCopyWith<$Res> {
-  __$$ResumeSectionImplCopyWithImpl(
-      _$ResumeSectionImpl _value, $Res Function(_$ResumeSectionImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? title = null,
-    Object? content = null,
-  }) {
-    return _then(_$ResumeSectionImpl(
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      content: null == content
-          ? _value.content
-          : content // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$ResumeSectionImpl implements _ResumeSection {
-  _$ResumeSectionImpl({required this.title, required this.content});
-
-  @override
-  final String title;
-  @override
-  final String content;
-
-  @override
-  String toString() {
-    return 'ResumeSection(title: $title, content: $content)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ResumeSectionImpl &&
-            (identical(other.title, title) || other.title == title) &&
-            (identical(other.content, content) || other.content == content));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, title, content);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ResumeSectionImplCopyWith<_$ResumeSectionImpl> get copyWith =>
-      __$$ResumeSectionImplCopyWithImpl<_$ResumeSectionImpl>(this, _$identity);
-}
-
-abstract class _ResumeSection implements ResumeSection {
-  factory _ResumeSection(
-      {required final String title,
-      required final String content}) = _$ResumeSectionImpl;
-
-  @override
-  String get title;
-  @override
-  String get content;
-  @override
-  @JsonKey(ignore: true)
-  _$$ResumeSectionImplCopyWith<_$ResumeSectionImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-mixin _$Resumes {
+mixin _$ResumeModel {
   String get name => throw _privateConstructorUsedError;
-  List<ResumeSection> get resumeModel => throw _privateConstructorUsedError;
+  set name(String value) => throw _privateConstructorUsedError;
+  String get designation => throw _privateConstructorUsedError;
+  set designation(String value) => throw _privateConstructorUsedError;
+  File? get profilePicture => throw _privateConstructorUsedError;
+  set profilePicture(File? value) => throw _privateConstructorUsedError;
+  List<ResumeSectionModel> get sections => throw _privateConstructorUsedError;
+  set sections(List<ResumeSectionModel> value) =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ResumesCopyWith<Resumes> get copyWith => throw _privateConstructorUsedError;
+  $ResumeModelCopyWith<ResumeModel> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ResumesCopyWith<$Res> {
-  factory $ResumesCopyWith(Resumes value, $Res Function(Resumes) then) =
-      _$ResumesCopyWithImpl<$Res, Resumes>;
+abstract class $ResumeModelCopyWith<$Res> {
+  factory $ResumeModelCopyWith(
+          ResumeModel value, $Res Function(ResumeModel) then) =
+      _$ResumeModelCopyWithImpl<$Res, ResumeModel>;
   @useResult
-  $Res call({String name, List<ResumeSection> resumeModel});
+  $Res call(
+      {String name,
+      String designation,
+      File? profilePicture,
+      List<ResumeSectionModel> sections});
 }
 
 /// @nodoc
-class _$ResumesCopyWithImpl<$Res, $Val extends Resumes>
-    implements $ResumesCopyWith<$Res> {
-  _$ResumesCopyWithImpl(this._value, this._then);
+class _$ResumeModelCopyWithImpl<$Res, $Val extends ResumeModel>
+    implements $ResumeModelCopyWith<$Res> {
+  _$ResumeModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -180,112 +58,134 @@ class _$ResumesCopyWithImpl<$Res, $Val extends Resumes>
   @override
   $Res call({
     Object? name = null,
-    Object? resumeModel = null,
+    Object? designation = null,
+    Object? profilePicture = freezed,
+    Object? sections = null,
   }) {
     return _then(_value.copyWith(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      resumeModel: null == resumeModel
-          ? _value.resumeModel
-          : resumeModel // ignore: cast_nullable_to_non_nullable
-              as List<ResumeSection>,
+      designation: null == designation
+          ? _value.designation
+          : designation // ignore: cast_nullable_to_non_nullable
+              as String,
+      profilePicture: freezed == profilePicture
+          ? _value.profilePicture
+          : profilePicture // ignore: cast_nullable_to_non_nullable
+              as File?,
+      sections: null == sections
+          ? _value.sections
+          : sections // ignore: cast_nullable_to_non_nullable
+              as List<ResumeSectionModel>,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$ResumesImplCopyWith<$Res> implements $ResumesCopyWith<$Res> {
-  factory _$$ResumesImplCopyWith(
-          _$ResumesImpl value, $Res Function(_$ResumesImpl) then) =
-      __$$ResumesImplCopyWithImpl<$Res>;
+abstract class _$$ResumeModelImplCopyWith<$Res>
+    implements $ResumeModelCopyWith<$Res> {
+  factory _$$ResumeModelImplCopyWith(
+          _$ResumeModelImpl value, $Res Function(_$ResumeModelImpl) then) =
+      __$$ResumeModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String name, List<ResumeSection> resumeModel});
+  $Res call(
+      {String name,
+      String designation,
+      File? profilePicture,
+      List<ResumeSectionModel> sections});
 }
 
 /// @nodoc
-class __$$ResumesImplCopyWithImpl<$Res>
-    extends _$ResumesCopyWithImpl<$Res, _$ResumesImpl>
-    implements _$$ResumesImplCopyWith<$Res> {
-  __$$ResumesImplCopyWithImpl(
-      _$ResumesImpl _value, $Res Function(_$ResumesImpl) _then)
+class __$$ResumeModelImplCopyWithImpl<$Res>
+    extends _$ResumeModelCopyWithImpl<$Res, _$ResumeModelImpl>
+    implements _$$ResumeModelImplCopyWith<$Res> {
+  __$$ResumeModelImplCopyWithImpl(
+      _$ResumeModelImpl _value, $Res Function(_$ResumeModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? name = null,
-    Object? resumeModel = null,
+    Object? designation = null,
+    Object? profilePicture = freezed,
+    Object? sections = null,
   }) {
-    return _then(_$ResumesImpl(
+    return _then(_$ResumeModelImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      resumeModel: null == resumeModel
-          ? _value._resumeModel
-          : resumeModel // ignore: cast_nullable_to_non_nullable
-              as List<ResumeSection>,
+      designation: null == designation
+          ? _value.designation
+          : designation // ignore: cast_nullable_to_non_nullable
+              as String,
+      profilePicture: freezed == profilePicture
+          ? _value.profilePicture
+          : profilePicture // ignore: cast_nullable_to_non_nullable
+              as File?,
+      sections: null == sections
+          ? _value.sections
+          : sections // ignore: cast_nullable_to_non_nullable
+              as List<ResumeSectionModel>,
     ));
   }
 }
 
 /// @nodoc
 
-class _$ResumesImpl implements _Resumes {
-  _$ResumesImpl(
-      {required this.name, required final List<ResumeSection> resumeModel})
-      : _resumeModel = resumeModel;
+class _$ResumeModelImpl implements _ResumeModel {
+  _$ResumeModelImpl(
+      {required this.name,
+      required this.designation,
+      required this.profilePicture,
+      required this.sections});
 
   @override
-  final String name;
-  final List<ResumeSection> _resumeModel;
+  String name;
   @override
-  List<ResumeSection> get resumeModel {
-    if (_resumeModel is EqualUnmodifiableListView) return _resumeModel;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_resumeModel);
-  }
+  String designation;
+  @override
+  File? profilePicture;
+  @override
+  List<ResumeSectionModel> sections;
 
   @override
   String toString() {
-    return 'Resumes(name: $name, resumeModel: $resumeModel)';
+    return 'ResumeModel(name: $name, designation: $designation, profilePicture: $profilePicture, sections: $sections)';
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ResumesImpl &&
-            (identical(other.name, name) || other.name == name) &&
-            const DeepCollectionEquality()
-                .equals(other._resumeModel, _resumeModel));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, name, const DeepCollectionEquality().hash(_resumeModel));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ResumesImplCopyWith<_$ResumesImpl> get copyWith =>
-      __$$ResumesImplCopyWithImpl<_$ResumesImpl>(this, _$identity);
+  _$$ResumeModelImplCopyWith<_$ResumeModelImpl> get copyWith =>
+      __$$ResumeModelImplCopyWithImpl<_$ResumeModelImpl>(this, _$identity);
 }
 
-abstract class _Resumes implements Resumes {
-  factory _Resumes(
-      {required final String name,
-      required final List<ResumeSection> resumeModel}) = _$ResumesImpl;
+abstract class _ResumeModel implements ResumeModel {
+  factory _ResumeModel(
+      {required String name,
+      required String designation,
+      required File? profilePicture,
+      required List<ResumeSectionModel> sections}) = _$ResumeModelImpl;
 
   @override
   String get name;
+  set name(String value);
   @override
-  List<ResumeSection> get resumeModel;
+  String get designation;
+  set designation(String value);
+  @override
+  File? get profilePicture;
+  set profilePicture(File? value);
+  @override
+  List<ResumeSectionModel> get sections;
+  set sections(List<ResumeSectionModel> value);
   @override
   @JsonKey(ignore: true)
-  _$$ResumesImplCopyWith<_$ResumesImpl> get copyWith =>
+  _$$ResumeModelImplCopyWith<_$ResumeModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -27,11 +27,11 @@ extension AlertDialogExtesnion on BuildContext {
     );
   }
 
-  void addNewSectionDialog() {
+  void addNewSectionDialog(void Function(String title, String content) onAdd) {
     showDialog(
       context: this,
       barrierDismissible: false,
-      builder: (context) => AddNewSectionWidget(),
+      builder: (context) => AddNewSectionWidget(onAdd: onAdd,),
     );
   }
 }

@@ -1,19 +1,17 @@
+import 'dart:io';
+
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import 'resume_section_model.dart';
 
 part 'resume_model.freezed.dart';
 
-@freezed
-class ResumeSection with _$ResumeSection {
-  factory ResumeSection({
-    required String title,
-    required String content,
-  }) = _ResumeSection;
-}
-
-@freezed
-class Resumes with _$Resumes {
-  factory Resumes({
+@unfreezed
+class ResumeModel with _$ResumeModel {
+  factory ResumeModel({
     required String name,
-    required List<ResumeSection> resumeModel,
-  }) = _Resumes;
+    required String designation,
+    required File? profilePicture,
+    required List<ResumeSectionModel> sections,
+  }) = _ResumeModel;
 }

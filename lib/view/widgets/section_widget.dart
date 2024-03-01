@@ -1,17 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:resume_builder/core/extensions/alert_dialog_extesnions.dart';
 
-class SectionWidget extends StatelessWidget {
+class SectionWidget extends ConsumerWidget {
   final String sectionTitle;
   final String sectionContents;
+  final VoidCallback onDelete;
+  final VoidCallback moveUp;
+  final VoidCallback moveDown;
   const SectionWidget({
     super.key,
     required this.sectionTitle,
     required this.sectionContents,
+    required this.onDelete,
+    required this.moveUp,
+    required this.moveDown,
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Card(
       margin: const EdgeInsets.symmetric(horizontal: 16),
       child: Padding(
@@ -33,7 +40,7 @@ class SectionWidget extends StatelessWidget {
                   onPressed: () {
                     context.warningDialog(
                       "Are you sure you want to delete?",
-                      () {},
+                      onDelete,
                     );
                   },
                   style: ElevatedButton.styleFrom(
@@ -53,12 +60,12 @@ class SectionWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 ElevatedButton.icon(
-                  onPressed: () {},
+                  onPressed: moveUp,
                   label: const Text('Move up'),
                   icon: const Icon(Icons.arrow_upward),
                 ),
                 ElevatedButton.icon(
-                  onPressed: () {},
+                  onPressed: moveDown,
                   label: const Text('Move down'),
                   icon: const Icon(Icons.arrow_downward),
                 ),
